@@ -2,12 +2,12 @@
    1. CONFIGURAÇÕES GERAIS E VARIÁVEIS
    ========================================================================== */
 :root {
-    --bg-primary: #0f172a;       /* Fundo principal escuro */
-    --bg-secondary: #1e293b;     /* Fundo das seções/cards */
-    --text-main: #f8fafc;        /* Texto principal */
-    --text-muted: #94a3b8;       /* Texto secundário/subtítulos */
-    --accent-color: #38bdf8;     /* Cor de destaque (Azul Ciano) */
-    --accent-hover: #0284c7;     /* Cor de hover dos botões */
+    --bg-primary: #0a0a0a;       /* Fundo principal (Preto quase puro) */
+    --bg-secondary: #171717;     /* Fundo das seções e cards (Cinza muito escuro) */
+    --text-main: #ffffff;        /* Texto principal (Branco puro) */
+    --text-muted: #a3a3a3;       /* Texto secundário (Cinza médio) */
+    --accent-color: #ffffff;     /* Destaques principais em Branco */
+    --border-color: #262626;     /* Bordas sutis */
     --font-family: 'Inter', system-ui, -apple-system, sans-serif;
     --transition: all 0.3s ease;
 }
@@ -53,7 +53,7 @@ header {
     left: 0;
     width: 100%;
     padding: 1.2rem 10%;
-    background-color: rgba(15, 23, 42, 0.9);
+    background-color: rgba(47, 49, 53, 0.9);
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
@@ -150,9 +150,9 @@ nav a:hover {
 /* ==========================================================================
    4. SEÇÃO TECNOLOGIAS & HABILIDADES
    ========================================================================== */
-.skills-list {
+   .skills-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
     list-style: none;
 }
@@ -228,4 +228,98 @@ nav a:hover {
     gap: 0.5rem;
     margin-bottom: 1.5rem;
     flex-wrap: wrap;
+}
+
+.project-card .tags span {
+    background-color: rgba(56, 189, 248, 0.1);
+    color: var(--accent-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.project-card a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 600;
+    margin-right: 1rem;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.project-card a:hover {
+    color: var(--accent-color);
+}
+
+/* ==========================================================================
+   7. SEÇÃO CONTATO & RODAPÉ
+   ========================================================================== */
+.contact {
+    text-align: center;
+}
+
+.contact p {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+footer {
+    padding: 2rem 10%;
+    background-color: var(--bg-secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+/* ==========================================================================
+   8. RESPONSIVIDADE (DISPOSITIVOS MÓVEIS)
+   ========================================================================== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    nav ul {
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+
+    section {
+        padding: 4rem 5%;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
 }
